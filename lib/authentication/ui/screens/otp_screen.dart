@@ -19,7 +19,7 @@ class OTPScreen extends StatelessWidget {
             Text(
               "Hello, Romina!!",
               style: TextStyle(
-                fontSize: 28,
+                fontSize: 25,
                 fontWeight: FontWeight.w800
               ),
             ),
