@@ -14,56 +14,70 @@ class OTPScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Background(
         background: LocalBackground.passBackground,
-        child: Column(
-          children: [
-            Text(
-              "Hello, Romina!!",
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w800
-              ),
-            ),
-            Text(
-              "Hello, Romina!!",
-              style: TextStyle(
-                fontSize: 19,
-              ),
-            ),
-            SizedBox(
-              width: 213,
-              child: PinCodeTextField(
-                enableActiveFill: true,
-
-
-                pinTheme: PinTheme(
-                  borderRadius: BorderRadius.circular(10),
-                  activeFillColor: Colors.white,
-                  selectedFillColor: Colors.white,
-                  inactiveFillColor: ColorTheme.secondaryGray,
-                  inactiveColor: ColorTheme.accentBluish,
-                  activeColor: ColorTheme.accentBluish,
-                  selectedColor: ColorTheme.accentBluish,),
-                backgroundColor: Colors.transparent,
-                  appContext: context,
-                  length: 4
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding:  EdgeInsets.only(top: MediaQuery.sizeOf(context).height/5.143),
+            child: Column(
               children: [
+
+                Padding(
+                  padding:  EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/23.2),
+                  child: SvgPicture.asset(LocalIcon.cameraPhoto),
+                ),
                 Text(
-                  "Not you?",
-                  style: TextStyle(fontSize: 14),
+                  "Hello, Romina!!",
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
                 ),
-                SizedBox(
-                  width: 16,
+                Padding(
+                  padding:  EdgeInsets.only(top: MediaQuery.sizeOf(context).height/27.06),
+                  child: Text(
+                    "Type your OTP",
+                    style: TextStyle(
+                      fontSize: 19,
+                    ),
+                  ),
                 ),
-                InkWell(
-                    onTap: () {},
-                    child: SvgPicture.asset(LocalIcon.arrowButton)),
+                Padding(
+                  padding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height/35.30),
+                  child: SizedBox(
+                    width: 213,
+                    child: PinCodeTextField(
+                        enableActiveFill: true,
+                        pinTheme: PinTheme(
+                          borderRadius: BorderRadius.circular(10),
+                          activeFillColor: Colors.white,
+                          selectedFillColor: Colors.white,
+                          inactiveFillColor: ColorTheme.secondaryGray,
+                          inactiveColor: ColorTheme.accentBluish,
+                          activeColor: ColorTheme.accentBluish,
+                          selectedColor: ColorTheme.accentBluish,
+                        ),
+                        backgroundColor: Colors.transparent,
+                        appContext: context,
+                        length: 4),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height/3.17),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Not you?",
+                        style: TextStyle(fontSize: 14),
+                      ),
+                      SizedBox(
+                        width: 16,
+                      ),
+                      InkWell(
+                          onTap: () {},
+                          child: SvgPicture.asset(LocalIcon.arrowButton)),
+                    ],
+                  ),
+                ),
               ],
             ),
-          ],
+          ),
         ));
   }
 }
