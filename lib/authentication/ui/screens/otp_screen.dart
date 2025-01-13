@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:shopee_ecommerce/authentication/ui/screens/password_recovery_screen.dart';
 import 'package:shopee_ecommerce/shared_theme/utilities/color_theme.dart';
 import 'package:shopee_ecommerce/shared_theme/utilities/local_background.dart';
 import 'package:shopee_ecommerce/shared_widgets/background.dart';
@@ -63,14 +64,16 @@ class OTPScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Not you?",
+                        "Reset your password?",
                         style: TextStyle(fontSize: 14),
                       ),
                       SizedBox(
                         width: 16,
                       ),
                       InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context){return PasswordRecoveryScreen();},));
+                          },
                           child: SvgPicture.asset(LocalIcon.arrowButton)),
                     ],
                   ),
