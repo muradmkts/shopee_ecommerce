@@ -77,31 +77,67 @@ class PasswordRecoveryScreen extends StatelessWidget {
                       right: MediaQuery.sizeOf(context).width / 18.75),
                   child: ElevatedButton(
                     onPressed: () {
-                      showDialog(context: context, builder: (BuildContext context){
-                        return AlertDialog(
-
-                          content: Container(
-                            height: MediaQuery.sizeOf(context).height/2,
-                            width: MediaQuery.sizeOf(context).width,
-                            child: Stack(
-                              alignment: Alignment.topCenter,
-                              children: [
-                                Container(
-                                  height: MediaQuery.sizeOf(context).height/3.60888,
-                                  color: Colors.amber,
-                                  child: Column(
-                                    children: [
-                                      Text("You reached out maximum amount of attempts. Please, try later.")
-                                    ],
-                                  ),
+                      //Popup dialogue design
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              backgroundColor: Colors.transparent,
+                              content: SizedBox(
+                                height: MediaQuery.sizeOf(context).height / 3,
+                                width: MediaQuery.sizeOf(context).width,
+                                child: Stack(
+                                  alignment: Alignment.topCenter,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 45),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(17),
+                                          color: ColorTheme.primaryWhite,
+                                        ),
+                                        height:
+                                            MediaQuery.sizeOf(context).height /
+                                                3.60888,
+                                        child: Column(
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10, right: 10, top: 50),
+                                              child: Text(
+                                                "You reached out maximum amount of attempts, Please try later.",
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight:
+                                                        FontWeight.w500),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(460),
+                                          boxShadow: [
+                                            BoxShadow(
+                                                color: ColorTheme.secondaryGray,
+                                                offset: Offset(0, 0),
+                                                blurRadius: 10,
+                                                spreadRadius: -10)
+                                          ]),
+                                      child: SvgPicture.asset(
+                                          LocalIcon.exclamatoryCircle),
+                                    ),
+                                  ],
                                 ),
-
-                                SvgPicture.asset(LocalIcon.exclamatoryCircle),
-                              ],
-                            ),
-                          ),
-                        );
-                      });
+                              ),
+                            );
+                          });
+                      //Popup dialogue design
                     },
                     child: Text(
                       "Save",
