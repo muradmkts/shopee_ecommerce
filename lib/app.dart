@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:shopee_ecommerce/authentication/ui/screens/start_screen.dart';
+import 'package:shopee_ecommerce/controller_bindings.dart';
 
 import 'package:shopee_ecommerce/shared_theme/utilities/color_theme.dart';
 
@@ -8,7 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      initialBinding: ControllerBindings(),
       debugShowCheckedModeBanner: false,
       title: "Shopee",
       theme: ThemeData(

@@ -5,6 +5,7 @@ import 'package:shopee_ecommerce/authentication/ui/screens/password_recovery_scr
 import 'package:shopee_ecommerce/shared_theme/utilities/color_theme.dart';
 import 'package:shopee_ecommerce/shared_theme/utilities/local_background.dart';
 import 'package:shopee_ecommerce/shared_widgets/background.dart';
+import 'package:shopee_ecommerce/shared_widgets/bottom_navbar.dart';
 
 import '../../../shared_theme/utilities/local_icon.dart';
 
@@ -43,8 +44,18 @@ class OTPScreen extends StatelessWidget {
                   child: SizedBox(
                     width: 213,
                     child: PinCodeTextField(
+                      onCompleted: (String value){
+                        if(value=="0000"){
+                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                            return BottomNavbar();
+                          }));
+                        }else{
+                          print("==================Wrong==================");
+                        }
+                      },
                         enableActiveFill: true,
                         pinTheme: PinTheme(
+
                           borderRadius: BorderRadius.circular(10),
                           activeFillColor: Colors.white,
                           selectedFillColor: Colors.white,
