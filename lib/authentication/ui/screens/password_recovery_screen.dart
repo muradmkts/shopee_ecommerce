@@ -77,8 +77,108 @@ class PasswordRecoveryScreen extends StatelessWidget {
                       right: MediaQuery.sizeOf(context).width / 18.75),
                   child: ElevatedButton(
                     onPressed: () {
-                      //Popup dialogue design
                       showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              backgroundColor: Colors.transparent,
+                              contentPadding: EdgeInsets.all(0),
+                              content: SizedBox(
+                                  height: MediaQuery.sizeOf(context).height / 3,
+                                  width:
+                                      MediaQuery.sizeOf(context).width / 1.080,
+                                  child: Stack(
+                                    alignment: Alignment.topCenter,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            top: MediaQuery.sizeOf(context)
+                                                    .height /
+                                                21.3684),
+                                        child: Container(
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height /
+                                              3.61,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                            color: ColorTheme.primaryWhite,
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              SizedBox(
+                                                height:
+                                                    MediaQuery.sizeOf(context)
+                                                            .height /
+                                                        20.245,
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal:
+                                                        MediaQuery.sizeOf(
+                                                                    context)
+                                                                .width /
+                                                            6.46),
+                                                child: Text(
+                                                  "You reached out maximum amount of attempts. Please, try later.",
+                                                  style:
+                                                      TextStyle(fontSize: 18),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                  height:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height /
+                                                          32.48),
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    vertical: 0,
+                                                    horizontal:
+                                                        MediaQuery.sizeOf(
+                                                                    context)
+                                                                .width /
+                                                            6.46),
+                                                child: ElevatedButton(
+                                                    style: ElevatedButton
+                                                        .styleFrom(
+                                                            backgroundColor:
+                                                                ColorTheme
+                                                                    .primaryBlack),
+                                                    onPressed: () {},
+                                                    child: Text(
+                                                      "Okay",
+                                                      style: TextStyle(
+                                                          fontSize: 22,
+                                                          fontWeight:
+                                                              FontWeight.w300),
+                                                    )),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(460),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  blurRadius: 10,
+                                                  spreadRadius: -10,
+                                                  color: ColorTheme.primaryBlack
+                                                      .withOpacity(.2),
+                                                )
+                                              ]),
+                                          child: SvgPicture.asset(
+                                              LocalIcon.exclamatoryCircle)),
+                                    ],
+                                  )),
+                            );
+                          });
+
+                      //Popup dialogue design
+                      /*showDialog(
                           context: context,
                           builder: (BuildContext context) {
                             return AlertDialog(
@@ -127,7 +227,7 @@ class PasswordRecoveryScreen extends StatelessWidget {
                                                 color: ColorTheme.secondaryGray,
                                                 offset: Offset(0, 0),
                                                 blurRadius: 10,
-                                                spreadRadius: -10)
+                                                spreadRadius: -7)
                                           ]),
                                       child: SvgPicture.asset(
                                           LocalIcon.exclamatoryCircle),
@@ -136,7 +236,7 @@ class PasswordRecoveryScreen extends StatelessWidget {
                                 ),
                               ),
                             );
-                          });
+                          });*/
                       //Popup dialogue design
                     },
                     child: Text(
