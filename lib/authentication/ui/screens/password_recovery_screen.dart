@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:shopee_ecommerce/shared_theme/utilities/color_theme.dart';
 import 'package:shopee_ecommerce/shared_theme/utilities/local_background.dart';
@@ -246,7 +248,10 @@ class PasswordRecoveryScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                TextButton(onPressed: () {}, child: Text("Cancel"))
+                TextButton(onPressed: () {
+                  Get.back();
+
+                }, child: Text("Cancel"))
               ],
             ),
           ),
