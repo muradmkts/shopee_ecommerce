@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:shopee_ecommerce/home/ui/utilitites/product_images.dart';
 import 'package:shopee_ecommerce/shared_theme/utilities/color_theme.dart';
+import 'package:shopee_ecommerce/shared_widgets/arrow_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -40,104 +42,851 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        body: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  vertical: MediaQuery.sizeOf(context).height / 81.2),
-              child: CarouselSlider(
-                items: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Stack(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/banners/slider_banner.jpg"),
-                                  fit: BoxFit.cover)),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 12, left: 18),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Big Sale",
-                                style: TextStyle(
-                                    fontSize: 29,
-                                    fontWeight: FontWeight.w800,
-                                    color: ColorTheme.primaryWhite),
-                              ),
-                              Text("Up to 50% Discount",
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    vertical: MediaQuery.sizeOf(context).height / 81.2),
+                child: CarouselSlider(
+                  items: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Stack(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        "assets/banners/slider_banner.jpg"),
+                                    fit: BoxFit.cover)),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 12, left: 18),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Big Sale",
                                   style: TextStyle(
-                                      color: ColorTheme.primaryWhite)),
+                                      fontSize: 29,
+                                      fontWeight: FontWeight.w800,
+                                      color: ColorTheme.primaryWhite),
+                                ),
+                                Text("Up to 50% Discount",
+                                    style: TextStyle(
+                                        color: ColorTheme.primaryWhite)),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                  options: CarouselOptions(
+                    aspectRatio: 2.5769,
+                    viewportFraction: .9,
+                    onPageChanged: (index, _) {},
+                  ),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        color: ColorTheme.primaryBlue,
+                        borderRadius: BorderRadius.circular(30)),
+                    height: 10,
+                    width: 40,
+                  ),
+                  SizedBox(width: 8),
+                  CircleAvatar(
+                    radius: 5,
+                    backgroundColor: ColorTheme.primaryBlue,
+                  ),
+                  SizedBox(width: 8),
+                  CircleAvatar(
+                    radius: 5,
+                    backgroundColor: ColorTheme.primaryBlue,
+                  ),
+                  SizedBox(width: 8),
+                  CircleAvatar(
+                    radius: 5,
+                    backgroundColor: ColorTheme.primaryBlue,
+                  ),
+                  SizedBox(width: 8),
+                  CircleAvatar(
+                    radius: 5,
+                    backgroundColor: ColorTheme.primaryBlue,
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: MediaQuery.sizeOf(context).width / 23.438,
+                    right: MediaQuery.sizeOf(context).width / 23.438,
+                    bottom: MediaQuery.sizeOf(context).height / 54.13,
+                    top: MediaQuery.sizeOf(context).height / 54.13),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Categories",
+                      style:
+                          TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
+                    ),
+                    Row(
+                      children: [
+                        Text("See All",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w800)),
+                        SizedBox(
+                            width: MediaQuery.sizeOf(context).width / 28.84),
+                        ArrowButton(onPress: () {})
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    vertical: MediaQuery.sizeOf(context).height / 135.33),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      height: MediaQuery.sizeOf(context).height / 4.23,
+                      width: MediaQuery.sizeOf(context).width / 2.27,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(9),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(0, 5),
+                              blurRadius: 10,
+                              spreadRadius: 0,
+                              color: ColorTheme.primaryBlack.withOpacity(.1),
+                            )
+                          ]),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: MediaQuery.sizeOf(context).height / 150,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage01),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage02),
+                                        fit: BoxFit.cover)),
+                              ),
                             ],
                           ),
+                          SizedBox(
+                            height: MediaQuery.sizeOf(context).height / 150,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage03),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage04),
+                                        fit: BoxFit.cover)),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: MediaQuery.sizeOf(context).height / 129,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.sizeOf(context).height / 129,
+                                  ),
+                                  Text("Clothing"),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    height: MediaQuery.sizeOf(context).height /
+                                        40.9,
+                                    width: MediaQuery.sizeOf(context).width /
+                                        9.8684,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(6),
+                                        color: ColorTheme.accentBluish),
+                                    child: Center(
+                                        child: Text(
+                                      "109",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w700),
+                                    )),
+                                  ),
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.sizeOf(context).height / 129,
+                                  ),
+                                ],
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: MediaQuery.sizeOf(context).height / 4.23,
+                      width: MediaQuery.sizeOf(context).width / 2.27,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(9),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(0, 5),
+                              blurRadius: 10,
+                              spreadRadius: 0,
+                              color: ColorTheme.primaryBlack.withOpacity(.1),
+                            )
+                          ]),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: MediaQuery.sizeOf(context).height / 150,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage01),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage02),
+                                        fit: BoxFit.cover)),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: MediaQuery.sizeOf(context).height / 150,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage03),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage04),
+                                        fit: BoxFit.cover)),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: MediaQuery.sizeOf(context).height / 129,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.sizeOf(context).height / 129,
+                                  ),
+                                  Text("Clothing"),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    height: MediaQuery.sizeOf(context).height /
+                                        40.9,
+                                    width: MediaQuery.sizeOf(context).width /
+                                        9.8684,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(6),
+                                        color: ColorTheme.accentBluish),
+                                    child: Center(
+                                        child: Text(
+                                      "109",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w700),
+                                    )),
+                                  ),
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.sizeOf(context).height / 129,
+                                  ),
+                                ],
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    height: MediaQuery.sizeOf(context).height / 4.23,
+                    width: MediaQuery.sizeOf(context).width / 2.27,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(9),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            offset: Offset(0, 5),
+                            blurRadius: 10,
+                            spreadRadius: 0,
+                            color: ColorTheme.primaryBlack.withOpacity(.1),
+                          )
+                        ]),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: MediaQuery.sizeOf(context).height / 150,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              height:
+                                  MediaQuery.sizeOf(context).height / 10.827,
+                              width: MediaQuery.sizeOf(context).height / 10.827,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          ProductImages.productImage01),
+                                      fit: BoxFit.cover)),
+                            ),
+                            Container(
+                              height:
+                                  MediaQuery.sizeOf(context).height / 10.827,
+                              width: MediaQuery.sizeOf(context).height / 10.827,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          ProductImages.productImage02),
+                                      fit: BoxFit.cover)),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: MediaQuery.sizeOf(context).height / 150,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              height:
+                                  MediaQuery.sizeOf(context).height / 10.827,
+                              width: MediaQuery.sizeOf(context).height / 10.827,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          ProductImages.productImage03),
+                                      fit: BoxFit.cover)),
+                            ),
+                            Container(
+                              height:
+                                  MediaQuery.sizeOf(context).height / 10.827,
+                              width: MediaQuery.sizeOf(context).height / 10.827,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          ProductImages.productImage04),
+                                      fit: BoxFit.cover)),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: MediaQuery.sizeOf(context).height / 129,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SizedBox(
+                                  width:
+                                      MediaQuery.sizeOf(context).height / 129,
+                                ),
+                                Text("Clothing"),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  height:
+                                      MediaQuery.sizeOf(context).height / 40.9,
+                                  width:
+                                      MediaQuery.sizeOf(context).width / 9.8684,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(6),
+                                      color: ColorTheme.accentBluish),
+                                  child: Center(
+                                      child: Text(
+                                    "109",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w700),
+                                  )),
+                                ),
+                                SizedBox(
+                                  width:
+                                      MediaQuery.sizeOf(context).height / 129,
+                                ),
+                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: MediaQuery.sizeOf(context).height / 4.23,
+                    width: MediaQuery.sizeOf(context).width / 2.27,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(9),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            offset: Offset(0, 5),
+                            blurRadius: 10,
+                            spreadRadius: 0,
+                            color: ColorTheme.primaryBlack.withOpacity(.1),
+                          )
+                        ]),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: MediaQuery.sizeOf(context).height / 150,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              height:
+                                  MediaQuery.sizeOf(context).height / 10.827,
+                              width: MediaQuery.sizeOf(context).height / 10.827,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          ProductImages.productImage01),
+                                      fit: BoxFit.cover)),
+                            ),
+                            Container(
+                              height:
+                                  MediaQuery.sizeOf(context).height / 10.827,
+                              width: MediaQuery.sizeOf(context).height / 10.827,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          ProductImages.productImage02),
+                                      fit: BoxFit.cover)),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: MediaQuery.sizeOf(context).height / 150,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
+                              height:
+                                  MediaQuery.sizeOf(context).height / 10.827,
+                              width: MediaQuery.sizeOf(context).height / 10.827,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          ProductImages.productImage03),
+                                      fit: BoxFit.cover)),
+                            ),
+                            Container(
+                              height:
+                                  MediaQuery.sizeOf(context).height / 10.827,
+                              width: MediaQuery.sizeOf(context).height / 10.827,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          ProductImages.productImage04),
+                                      fit: BoxFit.cover)),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: MediaQuery.sizeOf(context).height / 129,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SizedBox(
+                                  width:
+                                      MediaQuery.sizeOf(context).height / 129,
+                                ),
+                                Text("Clothing"),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  height:
+                                      MediaQuery.sizeOf(context).height / 40.9,
+                                  width:
+                                      MediaQuery.sizeOf(context).width / 9.8684,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(6),
+                                      color: ColorTheme.accentBluish),
+                                  child: Center(
+                                      child: Text(
+                                    "109",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w700),
+                                  )),
+                                ),
+                                SizedBox(
+                                  width:
+                                      MediaQuery.sizeOf(context).height / 129,
+                                ),
+                              ],
+                            )
+                          ],
                         )
                       ],
                     ),
                   )
                 ],
-                options: CarouselOptions(
-                  aspectRatio: 2.5769,
-                  viewportFraction: .9,
-                  onPageChanged: (index, _) {},
-                ),
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                      color: ColorTheme.primaryBlue,
-                      borderRadius: BorderRadius.circular(30)),
-                  height: 10,
-                  width: 40,
-                ),
-                SizedBox(width: 8),
-                CircleAvatar(
-                  radius: 5,
-                  backgroundColor: ColorTheme.primaryBlue,
-                ),
-                SizedBox(width: 8),
-                CircleAvatar(
-                  radius: 5,
-                  backgroundColor: ColorTheme.primaryBlue,
-                ),
-                SizedBox(width: 8),
-                CircleAvatar(
-                  radius: 5,
-                  backgroundColor: ColorTheme.primaryBlue,
-                ),
-                SizedBox(width: 8),
-                CircleAvatar(
-                  radius: 5,
-                  backgroundColor: ColorTheme.primaryBlue,
-                ),
-              ],
-            ),
-            GridView(
-              gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-              children: [
-                GridView(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    vertical: MediaQuery.sizeOf(context).height / 135.33),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
+                      height: MediaQuery.sizeOf(context).height / 4.23,
+                      width: MediaQuery.sizeOf(context).width / 2.27,
                       decoration: BoxDecoration(
-                          image: DecorationImage(image: AssetImage("assets/banners/slider_banner.jpg"))
+                          borderRadius: BorderRadius.circular(9),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(0, 5),
+                              blurRadius: 10,
+                              spreadRadius: 0,
+                              color: ColorTheme.primaryBlack.withOpacity(.1),
+                            )
+                          ]),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: MediaQuery.sizeOf(context).height / 150,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage01),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage02),
+                                        fit: BoxFit.cover)),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: MediaQuery.sizeOf(context).height / 150,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage03),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage04),
+                                        fit: BoxFit.cover)),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: MediaQuery.sizeOf(context).height / 129,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.sizeOf(context).height / 129,
+                                  ),
+                                  Text("Clothing"),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    height: MediaQuery.sizeOf(context).height /
+                                        40.9,
+                                    width: MediaQuery.sizeOf(context).width /
+                                        9.8684,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(6),
+                                        color: ColorTheme.accentBluish),
+                                    child: Center(
+                                        child: Text(
+                                      "109",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w700),
+                                    )),
+                                  ),
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.sizeOf(context).height / 129,
+                                  ),
+                                ],
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: MediaQuery.sizeOf(context).height / 4.23,
+                      width: MediaQuery.sizeOf(context).width / 2.27,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(9),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              offset: Offset(0, 5),
+                              blurRadius: 10,
+                              spreadRadius: 0,
+                              color: ColorTheme.primaryBlack.withOpacity(.1),
+                            )
+                          ]),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: MediaQuery.sizeOf(context).height / 150,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage01),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage02),
+                                        fit: BoxFit.cover)),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: MediaQuery.sizeOf(context).height / 150,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage03),
+                                        fit: BoxFit.cover)),
+                              ),
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                width:
+                                    MediaQuery.sizeOf(context).height / 10.827,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            ProductImages.productImage04),
+                                        fit: BoxFit.cover)),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: MediaQuery.sizeOf(context).height / 129,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.sizeOf(context).height / 129,
+                                  ),
+                                  Text("Clothing"),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    height: MediaQuery.sizeOf(context).height /
+                                        40.9,
+                                    width: MediaQuery.sizeOf(context).width /
+                                        9.8684,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(6),
+                                        color: ColorTheme.accentBluish),
+                                    child: Center(
+                                        child: Text(
+                                      "109",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w700),
+                                    )),
+                                  ),
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.sizeOf(context).height / 129,
+                                  ),
+                                ],
+                              )
+                            ],
+                          )
+                        ],
                       ),
                     )
                   ],
-                )
-              ],
-            )
-          ],
+                ),
+              ),
+            ],
+          ),
         ));
   }
 }

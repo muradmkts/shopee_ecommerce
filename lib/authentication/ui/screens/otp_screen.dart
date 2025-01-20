@@ -8,6 +8,7 @@ import 'package:shopee_ecommerce/shared_widgets/background.dart';
 import 'package:shopee_ecommerce/shared_widgets/bottom_navbar.dart';
 
 import '../../../shared_theme/utilities/local_icon.dart';
+import '../../../shared_widgets/arrow_button.dart';
 
 class OTPScreen extends StatelessWidget {
   const OTPScreen({super.key});
@@ -18,12 +19,13 @@ class OTPScreen extends StatelessWidget {
         background: LocalBackground.passBackground,
         child: SingleChildScrollView(
           child: Padding(
-            padding:  EdgeInsets.only(top: MediaQuery.sizeOf(context).height/5.143),
+            padding:
+                EdgeInsets.only(top: MediaQuery.sizeOf(context).height / 5.143),
             child: Column(
               children: [
-
                 Padding(
-                  padding:  EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/23.2),
+                  padding: EdgeInsets.only(
+                      bottom: MediaQuery.sizeOf(context).height / 23.2),
                   child: SvgPicture.asset(LocalIcon.cameraPhoto),
                 ),
                 Text(
@@ -31,7 +33,8 @@ class OTPScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800),
                 ),
                 Padding(
-                  padding:  EdgeInsets.only(top: MediaQuery.sizeOf(context).height/27.06),
+                  padding: EdgeInsets.only(
+                      top: MediaQuery.sizeOf(context).height / 27.06),
                   child: Text(
                     "Type your OTP",
                     style: TextStyle(
@@ -40,22 +43,23 @@ class OTPScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height/35.30),
+                  padding: EdgeInsets.only(
+                      top: MediaQuery.sizeOf(context).height / 35.30),
                   child: SizedBox(
                     width: 213,
                     child: PinCodeTextField(
-                      onCompleted: (String value){
-                        if(value=="0000"){
-                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-                            return BottomNavbar();
-                          }));
-                        }else{
-                          print("==================Wrong==================");
-                        }
-                      },
+                        onCompleted: (String value) {
+                          if (value == "0000") {
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (BuildContext context) {
+                              return BottomNavbar();
+                            }));
+                          } else {
+                            print("==================Wrong==================");
+                          }
+                        },
                         enableActiveFill: true,
                         pinTheme: PinTheme(
-
                           borderRadius: BorderRadius.circular(10),
                           activeFillColor: Colors.white,
                           selectedFillColor: Colors.white,
@@ -70,7 +74,8 @@ class OTPScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height/3.17),
+                  padding: EdgeInsets.only(
+                      top: MediaQuery.sizeOf(context).height / 3.17),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -81,11 +86,15 @@ class OTPScreen extends StatelessWidget {
                       SizedBox(
                         width: 16,
                       ),
-                      InkWell(
-                          onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context){return PasswordRecoveryScreen();},));
-                          },
-                          child: SvgPicture.asset(LocalIcon.arrowButton)),
+                      ArrowButton(
+                        onPress: () {
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) {
+                              return PasswordRecoveryScreen();
+                            },
+                          ));
+                        },
+                      ),
                     ],
                   ),
                 ),
