@@ -44,6 +44,7 @@ class HomeScreen extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
@@ -883,6 +884,145 @@ class HomeScreen extends StatelessWidget {
                       ),
                     )
                   ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.sizeOf(context).width / 18.75,
+                    vertical: MediaQuery.sizeOf(context).height / 54.13),
+                child: Text(
+                  "Top Products",
+                  style: TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.sizeOf(context).height / 11.6,
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            height: MediaQuery.sizeOf(context).height / 13.54,
+                            width: MediaQuery.sizeOf(context).height / 13.54,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0, 5),
+                                  blurRadius: 10,
+                                  spreadRadius: 0,
+                                  color:
+                                      ColorTheme.primaryBlack.withOpacity(.1),
+                                )
+                              ],
+                              color: ColorTheme.primaryWhite,
+                              borderRadius: BorderRadius.circular(500),
+                            ),
+                          ),
+                          Container(
+                            height: MediaQuery.sizeOf(context).height / 16.25,
+                            width: MediaQuery.sizeOf(context).height / 16.25,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(666),
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        "assets/product_images/image${index + 10}.jpg"))),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  itemCount: 5,
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: MediaQuery.sizeOf(context).width / 23.438,
+                    right: MediaQuery.sizeOf(context).width / 23.438,
+                    bottom: MediaQuery.sizeOf(context).height / 54.13,
+                    top: MediaQuery.sizeOf(context).height / 54.13),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "New Items",
+                      style:
+                          TextStyle(fontSize: 21, fontWeight: FontWeight.w800),
+                    ),
+                    Row(
+                      children: [
+                        Text("See All",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w800)),
+                        SizedBox(
+                            width: MediaQuery.sizeOf(context).width / 28.84),
+                        ArrowButton(onPress: () {})
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.sizeOf(context).height / 3.78,
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Container(
+                                height: MediaQuery.sizeOf(context).height / 5.8,
+                                width: MediaQuery.sizeOf(context).height / 5.8,
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      offset: Offset(0, 5),
+                                      blurRadius: 10,
+                                      spreadRadius: 0,
+                                      color: ColorTheme.primaryBlack
+                                          .withOpacity(.1),
+                                    )
+                                  ],
+                                  color: ColorTheme.primaryWhite,
+                                  borderRadius: BorderRadius.circular(9),
+                                ),
+                              ),
+                              Container(
+                                height:
+                                    MediaQuery.sizeOf(context).height / 6.25,
+                                width: MediaQuery.sizeOf(context).height / 6.25,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(9),
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            "assets/product_images/image${index + 10}.jpg"),
+                                        fit: BoxFit.cover)),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                              height: MediaQuery.sizeOf(context).height / 22.56,
+                              width: MediaQuery.sizeOf(context).height / 6.25,
+                              child: Center(
+                                  child: Text(
+                                      "High quality bags for girls under teen age"))),
+                          Text(
+                              "\$${index + 200}", style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800),)
+                        ],
+                      ),
+                    );
+                  },
+                  itemCount: 5,
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
                 ),
               ),
             ],
