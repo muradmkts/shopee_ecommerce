@@ -4,6 +4,7 @@ import 'package:shopee_ecommerce/authentication/ui/screens/start_screen.dart';
 import 'package:shopee_ecommerce/controller_bindings.dart';
 
 import 'package:shopee_ecommerce/shared_theme/utilities/color_theme.dart';
+import 'package:shopee_ecommerce/shared_widgets/bottom_navbar.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         //padding: EdgeInsets.symmetric(vertical: 16),
       ))),
-      home: StartScreen(),
+      home: BottomNavbar(),
     );
   }
 }
