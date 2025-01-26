@@ -54,54 +54,7 @@ class _CartScreenState extends State<CartScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        height: MediaQuery.sizeOf(context).height / 11.6,
-                        width: double.maxFinite,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: ColorTheme.secondaryLightWhite,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 16.0),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(bottom: 4),
-                                    child: Text(
-                                      "Shipping Address",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w800),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width:
-                                        MediaQuery.sizeOf(context).width / 1.6,
-                                    child: Text(
-                                      "26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city",
-                                      style: TextStyle(fontSize: 10),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(right: 16.0),
-                              child: IconButton(
-                                  style: IconButton.styleFrom(
-                                      backgroundColor: ColorTheme.primaryBlue,
-                                      foregroundColor: ColorTheme.primaryWhite),
-                                  onPressed: () {},
-                                  icon: Icon(Icons.edit)),
-                            )
-                          ],
-                        ),
-                      ),
+                      _shippingAddress(context),
                       ListView.builder(
                         primary: false,
                         shrinkWrap: true,
@@ -438,5 +391,56 @@ class _CartScreenState extends State<CartScreen> {
             )
           ],
         ));
+  }
+
+  Container _shippingAddress(BuildContext context) {
+    return Container(
+                      height: MediaQuery.sizeOf(context).height / 11.6,
+                      width: double.maxFinite,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: ColorTheme.secondaryLightWhite,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(left: 16.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(bottom: 4),
+                                  child: Text(
+                                    "Shipping Address",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w800),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width:
+                                      MediaQuery.sizeOf(context).width / 1.6,
+                                  child: Text(
+                                    "26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city",
+                                    style: TextStyle(fontSize: 10),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 16.0),
+                            child: IconButton(
+                                style: IconButton.styleFrom(
+                                    backgroundColor: ColorTheme.primaryBlue,
+                                    foregroundColor: ColorTheme.primaryWhite),
+                                onPressed: () {},
+                                icon: Icon(Icons.edit)),
+                          )
+                        ],
+                      ),
+                    );
   }
 }
