@@ -4,11 +4,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:shopee_ecommerce/cart/ui/cart_screen.dart';
 import 'package:shopee_ecommerce/home/ui/home_screen.dart';
-import 'package:shopee_ecommerce/product_category/ui/product_catagory_screen.dart';
+
 import 'package:shopee_ecommerce/profile/ui/profile_screen.dart';
 import 'package:shopee_ecommerce/shared_controller/navbar_controller.dart';
 import 'package:shopee_ecommerce/shared_theme/utilities/nav_icon_path.dart';
 import 'package:shopee_ecommerce/wishlist/ui/wishlist_screen.dart';
+
+import '../my_activity/ui/my_activity_screen.dart';
 
 class BottomNavbar extends StatelessWidget {
   BottomNavbar({super.key});
@@ -16,7 +18,7 @@ class BottomNavbar extends StatelessWidget {
   final List<Widget> screenList = [
     HomeScreen(),
     WishlistScreen(),
-    ProductCategory(),
+    MyActivity(),
     CartScreen(),
     ProfileScreen()
   ];
