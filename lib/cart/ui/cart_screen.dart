@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:shopee_ecommerce/payment_checkout/ui/payment_checkout_screen.dart';
 import 'package:shopee_ecommerce/shared_controller/counter_controller.dart';
 import 'package:shopee_ecommerce/shared_widgets/counter.dart';
 import 'package:get/get.dart';
@@ -376,7 +377,9 @@ class _CartScreenState extends State<CartScreen> {
                       width: MediaQuery.sizeOf(context).width / 3,
                       height: MediaQuery.sizeOf(context).height / 20.3,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(PaymentCheckoutScreen());
+                          },
                           child: Text(
                             "Checkout",
                             style: TextStyle(
