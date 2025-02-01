@@ -1,8 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:shopee_ecommerce/home/ui/utilitites/product_images.dart';
+import 'package:shopee_ecommerce/product_descriptions/ui/product_description_screen.dart';
 import 'package:shopee_ecommerce/shared_theme/utilities/color_theme.dart';
 import 'package:shopee_ecommerce/shared_widgets/arrow_button.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -975,38 +977,43 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Container(
-                                height: MediaQuery.sizeOf(context).height / 5.8,
-                                width: MediaQuery.sizeOf(context).height / 5.8,
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      offset: Offset(0, 5),
-                                      blurRadius: 10,
-                                      spreadRadius: 0,
-                                      color: ColorTheme.primaryBlack
-                                          .withOpacity(.1),
-                                    )
-                                  ],
-                                  color: ColorTheme.primaryWhite,
-                                  borderRadius: BorderRadius.circular(9),
-                                ),
-                              ),
-                              Container(
-                                height:
-                                    MediaQuery.sizeOf(context).height / 6.25,
-                                width: MediaQuery.sizeOf(context).height / 6.25,
-                                decoration: BoxDecoration(
+                          InkWell(
+                            onTap:(){
+                              Get.to(ProductDescriptionScreen(image: "assets/product_images/image${index + 10}.jpg", price: "\$${index + 200}"));
+                            },
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Container(
+                                  height: MediaQuery.sizeOf(context).height / 5.8,
+                                  width: MediaQuery.sizeOf(context).height / 5.8,
+                                  decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                        offset: Offset(0, 5),
+                                        blurRadius: 10,
+                                        spreadRadius: 0,
+                                        color: ColorTheme.primaryBlack
+                                            .withOpacity(.1),
+                                      )
+                                    ],
+                                    color: ColorTheme.primaryWhite,
                                     borderRadius: BorderRadius.circular(9),
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                            "assets/product_images/image${index + 10}.jpg"),
-                                        fit: BoxFit.cover)),
-                              ),
-                            ],
+                                  ),
+                                ),
+                                Container(
+                                  height:
+                                      MediaQuery.sizeOf(context).height / 6.25,
+                                  width: MediaQuery.sizeOf(context).height / 6.25,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(9),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              "assets/product_images/image${index + 10}.jpg"),
+                                          fit: BoxFit.cover)),
+                                ),
+                              ],
+                            ),
                           ),
                           SizedBox(
                               height: MediaQuery.sizeOf(context).height / 22.56,
