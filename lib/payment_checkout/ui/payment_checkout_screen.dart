@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shopee_ecommerce/shared_theme/utilities/local_icon.dart';
 
 import '../../shared_theme/utilities/color_theme.dart';
 
@@ -17,45 +19,349 @@ class PaymentCheckoutScreen extends StatelessWidget {
               color: ColorTheme.primaryBlack),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: MediaQuery.sizeOf(context).width/18.75),
-        child: Column(
-          children: [
-            Expanded(child: SingleChildScrollView(
+      body: Column(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.sizeOf(context).width / 18.75),
               child: Column(
                 children: [
-                  _shippingAddress(context),
-                  SizedBox(height: 8),
-                  _billingInfo(context),
-                  Row(
-                    children: [
-                      Text(
-                        "Items",
-                        style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.w800,
-                            color: ColorTheme.primaryBlack),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
-                        child: CircleAvatar(
-                          backgroundColor: ColorTheme.accentBluish,
-                          radius: 15,
+                  Expanded(
+                      child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _shippingAddress(context),
+                        SizedBox(height: 8),
+                        _billingInfo(context),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: MediaQuery.sizeOf(context).height / 40.75),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    "Items",
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w800,
+                                        color: ColorTheme.primaryBlack),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                                    child: CircleAvatar(
+                                      backgroundColor: ColorTheme.accentBluish,
+                                      radius: 15,
+                                      child: Text(
+                                        "2",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w800,
+                                            color: ColorTheme.primaryBlack),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      fixedSize: Size(
+                                          MediaQuery.sizeOf(context).width / 2.90,
+                                          MediaQuery.sizeOf(context).width / 27.066)),
+                                  onPressed: () {},
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text("5% Discount"),
+                                      Icon(Icons.cancel_outlined)
+                                    ],
+                                  ))
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: MediaQuery.sizeOf(context).height / 40.75),
+                          child: ListView.builder(
+                              primary: false,
+                              shrinkWrap: true,
+                              itemCount: 3,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.only(bottom: 10),
+                                  child: Row(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Stack(
+                                            alignment: Alignment.topRight,
+                                            children: [
+                                              Stack(
+                                                alignment: Alignment.center,
+                                                children: [
+                                                  Container(
+                                                    height: MediaQuery.sizeOf(context)
+                                                            .height /
+                                                        13.54,
+                                                    width: MediaQuery.sizeOf(context)
+                                                            .height /
+                                                        13.54,
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                                500),
+                                                        color:
+                                                            ColorTheme.primaryWhite,
+                                                        boxShadow: [
+                                                          BoxShadow(
+                                                            offset: Offset(0, 5),
+                                                            blurRadius: 10,
+                                                            spreadRadius: 0,
+                                                            color: ColorTheme
+                                                                .primaryBlack
+                                                                .withOpacity(.1),
+                                                          )
+                                                        ]),
+                                                  ),
+                                                  Container(
+                                                    height: MediaQuery.sizeOf(context)
+                                                            .height /
+                                                        16.25,
+                                                    width: MediaQuery.sizeOf(context)
+                                                            .height /
+                                                        16.25,
+                                                    decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                                666),
+                                                        image: DecorationImage(
+                                                            image: AssetImage(
+                                                                "assets/product_images/image${index + 10}.jpg"))),
+                                                  ),
+                                                ],
+                                              ),
+                                              CircleAvatar(
+                                                backgroundColor:
+                                                    ColorTheme.accentBluish,
+                                                radius: 15,
+                                                child: Text(
+                                                  "${index + 1}",
+                                                  style: TextStyle(
+                                                      fontWeight: FontWeight.w800,
+                                                      color: ColorTheme.primaryBlack),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 8),
+                                            child: SizedBox(
+                                              width:
+                                                  MediaQuery.sizeOf(context).width /
+                                                      1.91,
+                                              child: Text(
+                                                  "Lorem ipsum dolor sit amet consectetur."),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      Text(
+                                        "\$${17.12 * (index + 1)}",
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w900),
+                                      )
+                                    ],
+                                  ),
+                                );
+                              }),
+                        ),
+                        Padding(
+                          padding:  EdgeInsets.only(bottom: 8.0),
                           child: Text(
-                            "2",
+                            "Shipping Options",
                             style: TextStyle(
+                                fontSize: 24,
                                 fontWeight: FontWeight.w800,
                                 color: ColorTheme.primaryBlack),
                           ),
                         ),
-                      )
-                    ],
-                  ),
+                        ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: ColorTheme.accentBluish,
+                                elevation: 0),
+                            onPressed: () {},
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    SvgPicture.asset(LocalIcon.checkMark),
+                                    SizedBox(width: 8),
+                                    Text(
+                                      "Standard",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          color: ColorTheme.primaryBlack),
+                                    ),
+                                    SizedBox(width: 12),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(5),
+                                          color: ColorTheme.primaryWhite),
+                                      alignment: Alignment.center,
+                                      height:
+                                          MediaQuery.sizeOf(context).height / 31.23,
+                                      width: MediaQuery.sizeOf(context).width / 5.50,
+                                      child: Text("5-7 days",
+                                          style: TextStyle(
+                                              color: ColorTheme.primaryBlue)),
+                                    )
+                                  ],
+                                ),
+                                Text(
+                                  "FREE",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: ColorTheme.primaryBlack),
+                                )
+                              ],
+                            )),
+                        SizedBox(height: 8),
+                        ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: ColorTheme.accentBluish,
+                                elevation: 0),
+                            onPressed: () {},
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.circle_outlined, size: 27,),
+                                    SizedBox(width: 8),
+                                    Text(
+                                      "Premium",
+                                      style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          color: ColorTheme.primaryBlack),
+                                    ),
+                                    SizedBox(width: 12),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(5),
+                                          color: ColorTheme.primaryWhite),
+                                      alignment: Alignment.center,
+                                      height:
+                                          MediaQuery.sizeOf(context).height / 31.23,
+                                      width: MediaQuery.sizeOf(context).width / 5.50,
+                                      child: Text("1-2 days",
+                                          style: TextStyle(
+                                              color: ColorTheme.primaryBlue)),
+                                    )
+                                  ],
+                                ),
+                                Text(
+                                  "\$12.45",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: ColorTheme.primaryBlack),
+                                )
+                              ],
+                            )),
+                        SizedBox(height: 4),
+                        Text("Delivered on or before Thursday, 23 April 2020"),
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding:  EdgeInsets.only(top:8,bottom: 8.0),
+                              child: Text(
+                                "Payment Method",
+                                style: TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w800,
+                                    color: ColorTheme.primaryBlack),
+                              ),
+                            ),
+                            IconButton(
+                                style: IconButton.styleFrom(
+                                    backgroundColor: ColorTheme.primaryBlue,
+                                    foregroundColor: ColorTheme.primaryWhite),
+                                onPressed: () {},
+                                icon: Icon(Icons.edit)),
+                          ],
+                        ),
+                        ElevatedButton(style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          foregroundColor: ColorTheme.primaryBlue,
+                          backgroundColor: ColorTheme.accentBluish,
+                            fixedSize: Size(
+                                MediaQuery.sizeOf(context).width / 3.90,
+                                MediaQuery.sizeOf(context).width / 27.066)),
+                            onPressed: (){},
+                            child: Text("Card"))
+                      ],
+                    ),
+                  )),
                 ],
               ),
-            ))
-          ],
-        ),
+            ),
+          ),
+          Container(
+            height: MediaQuery.sizeOf(context).height / 13.53,
+            width: double.maxFinite,
+            decoration: BoxDecoration(
+                color: ColorTheme.secondaryGray.withOpacity(.5)),
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.sizeOf(context).width / 18.75,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  RichText(
+                    text: TextSpan(
+                        text: "Total",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w800,
+                            color: ColorTheme.primaryBlack),
+                        children: [
+                          TextSpan(
+                            text: "  \$${322}",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: ColorTheme.primaryBlack),
+                          )
+                        ]),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.sizeOf(context).width / 3,
+                    height: MediaQuery.sizeOf(context).height / 20.3,
+                    child: ElevatedButton(
+                        onPressed: () {
+                        },
+                        child: Text(
+                          "Pay",
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w400,
+                              color: ColorTheme.primaryWhite),
+                        )),
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
@@ -81,14 +387,11 @@ class PaymentCheckoutScreen extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 4),
                   child: Text(
                     "Shipping Address",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w800),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
                   ),
                 ),
                 SizedBox(
-                  width:
-                  MediaQuery.sizeOf(context).width / 1.6,
+                  width: MediaQuery.sizeOf(context).width / 1.6,
                   child: Text(
                     "26, Duong So 2, Thao Dien Ward, An Phu, District 2, Ho Chi Minh city",
                     style: TextStyle(fontSize: 10),
@@ -110,6 +413,7 @@ class PaymentCheckoutScreen extends StatelessWidget {
       ),
     );
   }
+
   Container _billingInfo(BuildContext context) {
     return Container(
       height: MediaQuery.sizeOf(context).height / 11.6,
@@ -131,17 +435,13 @@ class PaymentCheckoutScreen extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 4),
                   child: Text(
                     "Contact Information",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w800),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
                   ),
                 ),
                 SizedBox(
-                  width:
-                  MediaQuery.sizeOf(context).width / 1.6,
+                  width: MediaQuery.sizeOf(context).width / 1.6,
                   child: Text(
                     "+8801734590303\n gmail@yahoo.com",
-
                     style: TextStyle(fontSize: 10),
                   ),
                 )
@@ -157,7 +457,6 @@ class PaymentCheckoutScreen extends StatelessWidget {
                 onPressed: () {},
                 icon: Icon(Icons.edit)),
           ),
-
         ],
       ),
     );
