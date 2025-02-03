@@ -37,7 +37,8 @@ class PaymentCheckoutScreen extends StatelessWidget {
                         _billingInfo(context),
                         Padding(
                           padding: EdgeInsets.symmetric(
-                              vertical: MediaQuery.sizeOf(context).height / 40.75),
+                              vertical:
+                                  MediaQuery.sizeOf(context).height / 40.75),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -51,7 +52,8 @@ class PaymentCheckoutScreen extends StatelessWidget {
                                         color: ColorTheme.primaryBlack),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10.0),
                                     child: CircleAvatar(
                                       backgroundColor: ColorTheme.accentBluish,
                                       radius: 15,
@@ -68,11 +70,14 @@ class PaymentCheckoutScreen extends StatelessWidget {
                               ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                       fixedSize: Size(
-                                          MediaQuery.sizeOf(context).width / 2.90,
-                                          MediaQuery.sizeOf(context).width / 27.066)),
+                                          MediaQuery.sizeOf(context).width /
+                                              2.90,
+                                          MediaQuery.sizeOf(context).width /
+                                              27.066)),
                                   onPressed: () {},
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text("5% Discount"),
                                       Icon(Icons.cancel_outlined)
@@ -83,7 +88,8 @@ class PaymentCheckoutScreen extends StatelessWidget {
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(
-                              vertical: MediaQuery.sizeOf(context).height / 40.75),
+                              vertical:
+                                  MediaQuery.sizeOf(context).height / 40.75),
                           child: ListView.builder(
                               primary: false,
                               shrinkWrap: true,
@@ -102,40 +108,46 @@ class PaymentCheckoutScreen extends StatelessWidget {
                                                 alignment: Alignment.center,
                                                 children: [
                                                   Container(
-                                                    height: MediaQuery.sizeOf(context)
+                                                    height: MediaQuery.sizeOf(
+                                                                context)
                                                             .height /
                                                         13.54,
-                                                    width: MediaQuery.sizeOf(context)
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
                                                             .height /
                                                         13.54,
                                                     decoration: BoxDecoration(
                                                         borderRadius:
-                                                            BorderRadius.circular(
-                                                                500),
-                                                        color:
-                                                            ColorTheme.primaryWhite,
+                                                            BorderRadius
+                                                                .circular(500),
+                                                        color: ColorTheme
+                                                            .primaryWhite,
                                                         boxShadow: [
                                                           BoxShadow(
-                                                            offset: Offset(0, 5),
+                                                            offset:
+                                                                Offset(0, 5),
                                                             blurRadius: 10,
                                                             spreadRadius: 0,
                                                             color: ColorTheme
                                                                 .primaryBlack
-                                                                .withOpacity(.1),
+                                                                .withOpacity(
+                                                                    .1),
                                                           )
                                                         ]),
                                                   ),
                                                   Container(
-                                                    height: MediaQuery.sizeOf(context)
+                                                    height: MediaQuery.sizeOf(
+                                                                context)
                                                             .height /
                                                         16.25,
-                                                    width: MediaQuery.sizeOf(context)
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
                                                             .height /
                                                         16.25,
                                                     decoration: BoxDecoration(
                                                         borderRadius:
-                                                            BorderRadius.circular(
-                                                                666),
+                                                            BorderRadius
+                                                                .circular(666),
                                                         image: DecorationImage(
                                                             image: AssetImage(
                                                                 "assets/product_images/image${index + 10}.jpg"))),
@@ -149,8 +161,10 @@ class PaymentCheckoutScreen extends StatelessWidget {
                                                 child: Text(
                                                   "${index + 1}",
                                                   style: TextStyle(
-                                                      fontWeight: FontWeight.w800,
-                                                      color: ColorTheme.primaryBlack),
+                                                      fontWeight:
+                                                          FontWeight.w800,
+                                                      color: ColorTheme
+                                                          .primaryBlack),
                                                 ),
                                               ),
                                             ],
@@ -159,9 +173,9 @@ class PaymentCheckoutScreen extends StatelessWidget {
                                             padding: const EdgeInsets.symmetric(
                                                 horizontal: 8),
                                             child: SizedBox(
-                                              width:
-                                                  MediaQuery.sizeOf(context).width /
-                                                      1.91,
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width /
+                                                  1.91,
                                               child: Text(
                                                   "Lorem ipsum dolor sit amet consectetur."),
                                             ),
@@ -180,7 +194,7 @@ class PaymentCheckoutScreen extends StatelessWidget {
                               }),
                         ),
                         Padding(
-                          padding:  EdgeInsets.only(bottom: 8.0),
+                          padding: EdgeInsets.only(bottom: 8.0),
                           child: Text(
                             "Shipping Options",
                             style: TextStyle(
@@ -211,12 +225,15 @@ class PaymentCheckoutScreen extends StatelessWidget {
                                     SizedBox(width: 12),
                                     Container(
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(5),
+                                          borderRadius:
+                                              BorderRadius.circular(5),
                                           color: ColorTheme.primaryWhite),
                                       alignment: Alignment.center,
                                       height:
-                                          MediaQuery.sizeOf(context).height / 31.23,
-                                      width: MediaQuery.sizeOf(context).width / 5.50,
+                                          MediaQuery.sizeOf(context).height /
+                                              31.23,
+                                      width: MediaQuery.sizeOf(context).width /
+                                          5.50,
                                       child: Text("5-7 days",
                                           style: TextStyle(
                                               color: ColorTheme.primaryBlue)),
@@ -243,7 +260,10 @@ class PaymentCheckoutScreen extends StatelessWidget {
                               children: [
                                 Row(
                                   children: [
-                                    Icon(Icons.circle_outlined, size: 27,),
+                                    Icon(
+                                      Icons.circle_outlined,
+                                      size: 27,
+                                    ),
                                     SizedBox(width: 8),
                                     Text(
                                       "Premium",
@@ -255,12 +275,15 @@ class PaymentCheckoutScreen extends StatelessWidget {
                                     SizedBox(width: 12),
                                     Container(
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(5),
+                                          borderRadius:
+                                              BorderRadius.circular(5),
                                           color: ColorTheme.primaryWhite),
                                       alignment: Alignment.center,
                                       height:
-                                          MediaQuery.sizeOf(context).height / 31.23,
-                                      width: MediaQuery.sizeOf(context).width / 5.50,
+                                          MediaQuery.sizeOf(context).height /
+                                              31.23,
+                                      width: MediaQuery.sizeOf(context).width /
+                                          5.50,
                                       child: Text("1-2 days",
                                           style: TextStyle(
                                               color: ColorTheme.primaryBlue)),
@@ -278,10 +301,11 @@ class PaymentCheckoutScreen extends StatelessWidget {
                             )),
                         SizedBox(height: 4),
                         Text("Delivered on or before Thursday, 23 April 2020"),
-                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
-                              padding:  EdgeInsets.only(top:8,bottom: 8.0),
+                              padding: EdgeInsets.only(top: 8, bottom: 8.0),
                               child: Text(
                                 "Payment Method",
                                 style: TextStyle(
@@ -298,14 +322,135 @@ class PaymentCheckoutScreen extends StatelessWidget {
                                 icon: Icon(Icons.edit)),
                           ],
                         ),
-                        ElevatedButton(style: ElevatedButton.styleFrom(
-                          elevation: 0,
-                          foregroundColor: ColorTheme.primaryBlue,
-                          backgroundColor: ColorTheme.accentBluish,
-                            fixedSize: Size(
-                                MediaQuery.sizeOf(context).width / 3.90,
-                                MediaQuery.sizeOf(context).width / 27.066)),
-                            onPressed: (){},
+                        ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                elevation: 0,
+                                foregroundColor: ColorTheme.primaryBlue,
+                                backgroundColor: ColorTheme.accentBluish,
+                                fixedSize: Size(
+                                    MediaQuery.sizeOf(context).width / 3.90,
+                                    MediaQuery.sizeOf(context).width / 27.066)),
+                            onPressed: () {
+                              showModalBottomSheet(
+                                backgroundColor: ColorTheme.accentBluish,
+                                  context: context,
+                                  builder: (context) {
+                                    return Container(
+                                      height:
+                                          MediaQuery.sizeOf(context).height /
+                                              2.11,
+                                      width: double.maxFinite,
+                                      child: Padding(
+                                        padding:  EdgeInsets.all(MediaQuery.sizeOf(context).width/18.75),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/20.92),
+                                              child: Text("Add Card", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: ColorTheme.primaryBlack),),
+                                            ),
+                                            Padding(
+                                              padding:  EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/203),
+                                              child: Text("Card Holder" , style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: ColorTheme.primaryBlack),),
+                                            ),
+                                            Padding(
+                                              padding:  EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/47.76),
+                                              child: TextField(
+
+                                                decoration: InputDecoration(
+                                                  contentPadding: EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+                                                  hintText: "Required",
+                                                    hintStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: ColorTheme.secondaryGray),
+                                                    constraints: BoxConstraints(
+                                                      maxHeight: MediaQuery.sizeOf(context).height/21.95
+
+                                                    )
+
+                                                ),
+
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding:  EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/203),
+                                              child: Text("Card Number", style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: ColorTheme.primaryBlack),),
+                                            ),
+                                            Padding(
+                                              padding:  EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/47.76),
+                                              child: TextField(
+                                                decoration: InputDecoration(
+                                                    contentPadding: EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+                                                    hintText: "Required",
+                                                    hintStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: ColorTheme.secondaryGray),
+                                                    constraints: BoxConstraints(
+                                                        maxHeight: MediaQuery.sizeOf(context).height/21.95
+
+                                                    )
+
+                                                ),
+                                              ),
+                                            ),
+                                            Row(
+
+                                              children: [
+                                                SizedBox(
+                                                  width: MediaQuery.sizeOf(context).width/2.27,
+                                                  child: Padding(
+                                                    padding:  EdgeInsets.only(right: 8),
+                                                    child: Column(
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      children: [
+                                                        Text("Valid"),
+                                                        Padding(
+                                                          padding:  EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/47.76),
+                                                          child: TextField(decoration: InputDecoration(
+                                                              contentPadding: EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+                                                              hintText: "Required",
+                                                              hintStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: ColorTheme.secondaryGray),
+                                                              constraints: BoxConstraints(
+                                                                  maxHeight: MediaQuery.sizeOf(context).height/21.95
+
+                                                              )
+
+                                                          ),),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: MediaQuery.sizeOf(context).width/2.27,
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Text("CVC"),
+                                                      Padding(
+                                                        padding:  EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/47.76),
+                                                        child: TextField(decoration: InputDecoration(
+                                                            contentPadding: EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+                                                            hintText: "Required",
+                                                            hintStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: ColorTheme.secondaryGray),
+                                                            constraints: BoxConstraints(
+                                                                maxHeight: MediaQuery.sizeOf(context).height/21.95
+
+                                                            )
+
+                                                        ),),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            ElevatedButton(
+                                                style: ElevatedButton.styleFrom( fixedSize: Size(double.maxFinite, MediaQuery.sizeOf(context).height/20.3)),
+                                                onPressed: (){},
+                                                child: Text("Save Changes") )
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  });
+                            },
                             child: Text("Card"))
                       ],
                     ),
@@ -317,8 +462,8 @@ class PaymentCheckoutScreen extends StatelessWidget {
           Container(
             height: MediaQuery.sizeOf(context).height / 13.53,
             width: double.maxFinite,
-            decoration: BoxDecoration(
-                color: ColorTheme.secondaryGray.withOpacity(.5)),
+            decoration:
+                BoxDecoration(color: ColorTheme.secondaryGray.withOpacity(.5)),
             child: Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.sizeOf(context).width / 18.75,
@@ -347,8 +492,7 @@ class PaymentCheckoutScreen extends StatelessWidget {
                     width: MediaQuery.sizeOf(context).width / 3,
                     height: MediaQuery.sizeOf(context).height / 20.3,
                     child: ElevatedButton(
-                        onPressed: () {
-                        },
+                        onPressed: () {},
                         child: Text(
                           "Pay",
                           style: TextStyle(

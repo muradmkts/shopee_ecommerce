@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:shopee_ecommerce/cart/controller/remove_wishlist_item.dart';
 import 'package:shopee_ecommerce/payment_checkout/ui/payment_checkout_screen.dart';
 import 'package:shopee_ecommerce/shared_controller/counter_controller.dart';
 import 'package:shopee_ecommerce/shared_widgets/counter.dart';
 import 'package:get/get.dart';
+import '../../product_descriptions/ui/product_description_screen.dart';
 import '../../shared_theme/utilities/color_theme.dart';
 
 class CartScreen extends StatefulWidget {
@@ -64,49 +66,54 @@ class _CartScreenState extends State<CartScreen> {
                             padding: EdgeInsets.only(top: 16.0),
                             child: Row(
                               children: [
-                                Stack(
-                                  alignment: Alignment.center,
-                                  children: [
-                                    Container(
+                                InkWell(
+                                  onTap:(){
+                                    Get.to(ProductDescriptionScreen(image: "assets/product_images/image${index + 22}.jpg", price: "\$${433.00 * index + 323 - 1}"));
+                                  },
+                                  child: Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      Container(
+                                          height:
+                                              MediaQuery.sizeOf(context).height /
+                                                  7.38,
+                                          width:
+                                              MediaQuery.sizeOf(context).width /
+                                                  2.88,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(9),
+                                              color: ColorTheme.primaryWhite,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  offset: Offset(0, 5),
+                                                  blurRadius: 10,
+                                                  spreadRadius: 0,
+                                                  color: ColorTheme.primaryBlack
+                                                      .withOpacity(.1),
+                                                )
+                                              ])),
+                                      Container(
+                                        width: MediaQuery.sizeOf(context).width /
+                                            3.125,
                                         height:
                                             MediaQuery.sizeOf(context).height /
-                                                7.38,
-                                        width:
-                                            MediaQuery.sizeOf(context).width /
-                                                2.88,
+                                                7.96,
                                         decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(9),
-                                            color: ColorTheme.primaryWhite,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                offset: Offset(0, 5),
-                                                blurRadius: 10,
-                                                spreadRadius: 0,
-                                                color: ColorTheme.primaryBlack
-                                                    .withOpacity(.1),
-                                              )
-                                            ])),
-                                    Container(
-                                      width: MediaQuery.sizeOf(context).width /
-                                          3.125,
-                                      height:
-                                          MediaQuery.sizeOf(context).height /
-                                              7.96,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(9),
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  "assets/product_images/image${index + 22}.jpg"),
-                                              fit: BoxFit.cover)),
-                                    ),
-                                    Positioned(
-                                        bottom: 15,
-                                        left: 15,
-                                        child: SvgPicture.asset(
-                                            "assets/shopee_icons/delete_icon.svg"))
-                                  ],
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                    "assets/product_images/image${index + 22}.jpg"),
+                                                fit: BoxFit.cover)),
+                                      ),
+                                      Positioned(
+                                          bottom: 15,
+                                          left: 15,
+                                          child: SvgPicture.asset(
+                                              "assets/shopee_icons/delete_icon.svg"))
+                                    ],
+                                  ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(
@@ -189,151 +196,165 @@ class _CartScreenState extends State<CartScreen> {
                             style: TextStyle(
                                 fontSize: 21, fontWeight: FontWeight.w800)),
                       ),
-                      ListView.builder(
-                        primary: false,
-                        shrinkWrap: true,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Padding(
-                            padding: EdgeInsets.only(top: 16.0),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
+                      GetBuilder<RemoveWishlistItem>(
+                        builder: (controller) {
+                          return ListView.builder(
+                            primary: false,
+                            shrinkWrap: true,
+                            itemBuilder: (BuildContext context, int index) {
+                              return Padding(
+                                padding: EdgeInsets.only(top: 16.0),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Stack(
-                                      alignment: Alignment.center,
+                                    Row(
                                       children: [
-                                        Container(
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height /
-                                                7.38,
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width /
-                                                2.88,
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(9),
-                                                color: ColorTheme.primaryWhite,
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    offset: Offset(0, 5),
-                                                    blurRadius: 10,
-                                                    spreadRadius: 0,
-                                                    color: ColorTheme
-                                                        .primaryBlack
-                                                        .withOpacity(.1),
-                                                  )
-                                                ])),
-                                        Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width /
-                                                  3.125,
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height /
-                                              7.96,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(9),
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      "assets/product_images/image${index + 10}.jpg"),
-                                                  fit: BoxFit.cover)),
-                                        ),
-                                        Positioned(
-                                            bottom: 15,
-                                            left: 15,
-                                            child: SvgPicture.asset(
-                                                "assets/shopee_icons/delete_icon.svg"))
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(
-                                          left:
-                                              MediaQuery.sizeOf(context).width /
-                                                  26.79),
-                                      child: SizedBox(
-                                        height:
-                                            MediaQuery.sizeOf(context).height /
-                                                7.38,
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
+                                        Stack(
+                                          alignment: Alignment.center,
                                           children: [
-                                            SizedBox(
+                                            Container(
+                                                height: MediaQuery.sizeOf(context)
+                                                        .height /
+                                                    7.38,
+                                                width: MediaQuery.sizeOf(context)
+                                                        .width /
+                                                    2.88,
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(9),
+                                                    color: ColorTheme.primaryWhite,
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                        offset: Offset(0, 5),
+                                                        blurRadius: 10,
+                                                        spreadRadius: 0,
+                                                        color: ColorTheme
+                                                            .primaryBlack
+                                                            .withOpacity(.1),
+                                                      )
+                                                    ])),
+                                            InkWell(
+                                              onTap:(){
+                                                Get.to(ProductDescriptionScreen(image: "assets/product_images/image${index + 10}.jpg", price: "\$${index + 200}"));
+                                              },
+                                              child: Container(
                                                 width:
-                                                    MediaQuery.sizeOf(context)
-                                                            .width /
-                                                        2.7,
-                                                child: Text(
-                                                  "Lorem ipsum dolor sit amet consectetur.",
-                                                  style:
-                                                      TextStyle(fontSize: 12),
-                                                )),
-                                            Text(
-                                              "\$${433.00 * index + 323 - 1}",
-                                              style: TextStyle(
-                                                  fontSize: 22,
-                                                  fontWeight: FontWeight.w800),
+                                                    MediaQuery.sizeOf(context).width /
+                                                        3.125,
+                                                height: MediaQuery.sizeOf(context)
+                                                        .height /
+                                                    7.96,
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(9),
+                                                    image: DecorationImage(
+                                                        image: AssetImage(
+                                                            "assets/product_images/image${index + 10}.jpg"),
+                                                        fit: BoxFit.cover)),
+                                              ),
                                             ),
-                                            Row(
-                                              children: [
-                                                Container(
-                                                  height:
-                                                      MediaQuery.sizeOf(context)
-                                                              .height /
-                                                          32.48,
-                                                  width:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width /
-                                                          6.95,
-                                                  child: Center(
-                                                      child: Text("Pink")),
-                                                  decoration: BoxDecoration(
-                                                      color: ColorTheme
-                                                          .accentBluish,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              4)),
-                                                ),
-                                                SizedBox(
-                                                  width: 6,
-                                                ),
-                                                Container(
-                                                  height:
-                                                      MediaQuery.sizeOf(context)
-                                                              .height /
-                                                          32.48,
-                                                  width:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width /
-                                                          6.95,
-                                                  child:
-                                                      Center(child: Text("M")),
-                                                  decoration: BoxDecoration(
-                                                      color: ColorTheme
-                                                          .accentBluish,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              4)),
-                                                )
-                                              ],
-                                            )
+                                            Positioned(
+                                                bottom: 15,
+                                                left: 15,
+                                                child: InkWell(
+                                                  onTap:(){
+                                                    controller.delete(index);
+                                                  },
+                                                  child: SvgPicture.asset(
+                                                      "assets/shopee_icons/delete_icon.svg"),
+                                                ))
                                           ],
                                         ),
-                                      ),
-                                    )
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              left:
+                                                  MediaQuery.sizeOf(context).width /
+                                                      26.79),
+                                          child: SizedBox(
+                                            height:
+                                                MediaQuery.sizeOf(context).height /
+                                                    7.38,
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceBetween,
+                                              children: [
+                                                SizedBox(
+                                                    width:
+                                                        MediaQuery.sizeOf(context)
+                                                                .width /
+                                                            2.7,
+                                                    child: Text(
+                                                      "Lorem ipsum dolor sit amet consectetur.",
+                                                      style:
+                                                          TextStyle(fontSize: 12),
+                                                    )),
+                                                Text(
+                                                  "\$${433.00 * index + 323 - 1}",
+                                                  style: TextStyle(
+                                                      fontSize: 22,
+                                                      fontWeight: FontWeight.w800),
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Container(
+                                                      height:
+                                                          MediaQuery.sizeOf(context)
+                                                                  .height /
+                                                              32.48,
+                                                      width:
+                                                          MediaQuery.sizeOf(context)
+                                                                  .width /
+                                                              6.95,
+                                                      child: Center(
+                                                          child: Text("Pink")),
+                                                      decoration: BoxDecoration(
+                                                          color: ColorTheme
+                                                              .accentBluish,
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                  4)),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 6,
+                                                    ),
+                                                    Container(
+                                                      height:
+                                                          MediaQuery.sizeOf(context)
+                                                                  .height /
+                                                              32.48,
+                                                      width:
+                                                          MediaQuery.sizeOf(context)
+                                                                  .width /
+                                                              6.95,
+                                                      child:
+                                                          Center(child: Text("M")),
+                                                      decoration: BoxDecoration(
+                                                          color: ColorTheme
+                                                              .accentBluish,
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                  4)),
+                                                    )
+                                                  ],
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    SvgPicture.asset(
+                                        "assets/shopee_icons/add_icon.svg")
                                   ],
                                 ),
-                                SvgPicture.asset(
-                                    "assets/shopee_icons/add_icon.svg")
-                              ],
-                            ),
+                              );
+                            },
+                            itemCount: controller.deleteItem,
                           );
-                        },
-                        itemCount: 5,
+                        }
                       )
                     ],
                   ),
