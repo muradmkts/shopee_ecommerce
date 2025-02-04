@@ -6,6 +6,7 @@ class LocalIcon {
   static const String companyLogo = "assets/logos/figma_icons/logo.svg";
   static const String mFacebook = "assets/logos/figma_icons/m.svg";
   static const String cameraPhoto = "assets/logos/figma_icons/photo.svg";
+  static const String masterCard = "assets/logos/figma_icons/mastercard.svg";
 
 
 }

@@ -332,7 +332,7 @@ class PaymentCheckoutScreen extends StatelessWidget {
                                     MediaQuery.sizeOf(context).width / 27.066)),
                             onPressed: () {
                               showModalBottomSheet(
-                                backgroundColor: ColorTheme.accentBluish,
+                                  backgroundColor: ColorTheme.accentBluish,
                                   context: context,
                                   builder: (context) {
                                     return Container(
@@ -341,100 +341,204 @@ class PaymentCheckoutScreen extends StatelessWidget {
                                               2.11,
                                       width: double.maxFinite,
                                       child: Padding(
-                                        padding:  EdgeInsets.all(MediaQuery.sizeOf(context).width/18.75),
+                                        padding: EdgeInsets.all(
+                                            MediaQuery.sizeOf(context).width /
+                                                18.75),
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/20.92),
-                                              child: Text("Add Card", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: ColorTheme.primaryBlack),),
-                                            ),
-                                            Padding(
-                                              padding:  EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/203),
-                                              child: Text("Card Holder" , style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: ColorTheme.primaryBlack),),
-                                            ),
-                                            Padding(
-                                              padding:  EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/47.76),
-                                              child: TextField(
-
-                                                decoration: InputDecoration(
-                                                  contentPadding: EdgeInsets.symmetric(vertical: 2, horizontal: 16),
-                                                  hintText: "Required",
-                                                    hintStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: ColorTheme.secondaryGray),
-                                                    constraints: BoxConstraints(
-                                                      maxHeight: MediaQuery.sizeOf(context).height/21.95
-
-                                                    )
-
-                                                ),
-
+                                              padding: EdgeInsets.only(
+                                                  bottom:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height /
+                                                          20.92),
+                                              child: Text(
+                                                "Add Card",
+                                                style: TextStyle(
+                                                    fontSize: 22,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: ColorTheme
+                                                        .primaryBlack),
                                               ),
                                             ),
                                             Padding(
-                                              padding:  EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/203),
-                                              child: Text("Card Number", style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: ColorTheme.primaryBlack),),
+                                              padding: EdgeInsets.only(
+                                                  bottom:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height /
+                                                          203),
+                                              child: Text(
+                                                "Card Holder",
+                                                style: TextStyle(
+                                                    fontSize: 13,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: ColorTheme
+                                                        .primaryBlack),
+                                              ),
                                             ),
                                             Padding(
-                                              padding:  EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/47.76),
+                                              padding: EdgeInsets.only(
+                                                  bottom:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height /
+                                                          47.76),
                                               child: TextField(
                                                 decoration: InputDecoration(
-                                                    contentPadding: EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+                                                    contentPadding:
+                                                        EdgeInsets.symmetric(
+                                                            vertical: 2,
+                                                            horizontal: 16),
                                                     hintText: "Required",
-                                                    hintStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: ColorTheme.secondaryGray),
+                                                    hintStyle: TextStyle(
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        color: ColorTheme
+                                                            .secondaryGray),
                                                     constraints: BoxConstraints(
-                                                        maxHeight: MediaQuery.sizeOf(context).height/21.95
-
-                                                    )
-
-                                                ),
+                                                        maxHeight:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height /
+                                                                21.95)),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsets.only(
+                                                  bottom:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height /
+                                                          203),
+                                              child: Text(
+                                                "Card Number",
+                                                style: TextStyle(
+                                                    fontSize: 13,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: ColorTheme
+                                                        .primaryBlack),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsets.only(
+                                                  bottom:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height /
+                                                          47.76),
+                                              child: TextField(
+                                                decoration: InputDecoration(
+                                                    contentPadding:
+                                                        EdgeInsets.symmetric(
+                                                            vertical: 2,
+                                                            horizontal: 16),
+                                                    hintText: "Required",
+                                                    hintStyle: TextStyle(
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                        color: ColorTheme
+                                                            .secondaryGray),
+                                                    constraints: BoxConstraints(
+                                                        maxHeight:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height /
+                                                                21.95)),
                                               ),
                                             ),
                                             Row(
-
                                               children: [
                                                 SizedBox(
-                                                  width: MediaQuery.sizeOf(context).width/2.27,
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width /
+                                                          2.27,
                                                   child: Padding(
-                                                    padding:  EdgeInsets.only(right: 8),
+                                                    padding: EdgeInsets.only(
+                                                        right: 8),
                                                     child: Column(
-                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
                                                         Text("Valid"),
                                                         Padding(
-                                                          padding:  EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/47.76),
-                                                          child: TextField(decoration: InputDecoration(
-                                                              contentPadding: EdgeInsets.symmetric(vertical: 2, horizontal: 16),
-                                                              hintText: "Required",
-                                                              hintStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: ColorTheme.secondaryGray),
-                                                              constraints: BoxConstraints(
-                                                                  maxHeight: MediaQuery.sizeOf(context).height/21.95
-
-                                                              )
-
-                                                          ),),
+                                                          padding: EdgeInsets.only(
+                                                              bottom: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .height /
+                                                                  47.76),
+                                                          child: TextField(
+                                                            decoration: InputDecoration(
+                                                                contentPadding:
+                                                                    EdgeInsets.symmetric(
+                                                                        vertical:
+                                                                            2,
+                                                                        horizontal:
+                                                                            16),
+                                                                hintText:
+                                                                    "Required",
+                                                                hintStyle: TextStyle(
+                                                                    fontSize:
+                                                                        16,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w400,
+                                                                    color: ColorTheme
+                                                                        .secondaryGray),
+                                                                constraints: BoxConstraints(
+                                                                    maxHeight: MediaQuery.sizeOf(context)
+                                                                            .height /
+                                                                        21.95)),
+                                                          ),
                                                         ),
                                                       ],
                                                     ),
                                                   ),
                                                 ),
                                                 SizedBox(
-                                                  width: MediaQuery.sizeOf(context).width/2.27,
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width /
+                                                          2.27,
                                                   child: Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
                                                     children: [
                                                       Text("CVC"),
                                                       Padding(
-                                                        padding:  EdgeInsets.only(bottom: MediaQuery.sizeOf(context).height/47.76),
-                                                        child: TextField(decoration: InputDecoration(
-                                                            contentPadding: EdgeInsets.symmetric(vertical: 2, horizontal: 16),
-                                                            hintText: "Required",
-                                                            hintStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: ColorTheme.secondaryGray),
-                                                            constraints: BoxConstraints(
-                                                                maxHeight: MediaQuery.sizeOf(context).height/21.95
-
-                                                            )
-
-                                                        ),),
+                                                        padding: EdgeInsets.only(
+                                                            bottom: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .height /
+                                                                47.76),
+                                                        child: TextField(
+                                                          decoration: InputDecoration(
+                                                              contentPadding:
+                                                                  EdgeInsets.symmetric(
+                                                                      vertical:
+                                                                          2,
+                                                                      horizontal:
+                                                                          16),
+                                                              hintText:
+                                                                  "Required",
+                                                              hintStyle: TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w400,
+                                                                  color: ColorTheme
+                                                                      .secondaryGray),
+                                                              constraints: BoxConstraints(
+                                                                  maxHeight: MediaQuery.sizeOf(
+                                                                              context)
+                                                                          .height /
+                                                                      21.95)),
+                                                        ),
                                                       ),
                                                     ],
                                                   ),
@@ -442,9 +546,15 @@ class PaymentCheckoutScreen extends StatelessWidget {
                                               ],
                                             ),
                                             ElevatedButton(
-                                                style: ElevatedButton.styleFrom( fixedSize: Size(double.maxFinite, MediaQuery.sizeOf(context).height/20.3)),
-                                                onPressed: (){},
-                                                child: Text("Save Changes") )
+                                                style: ElevatedButton.styleFrom(
+                                                    fixedSize: Size(
+                                                        double.maxFinite,
+                                                        MediaQuery.sizeOf(
+                                                                    context)
+                                                                .height /
+                                                            20.3)),
+                                                onPressed: () {},
+                                                child: Text("Save Changes"))
                                           ],
                                         ),
                                       ),
@@ -492,7 +602,316 @@ class PaymentCheckoutScreen extends StatelessWidget {
                     width: MediaQuery.sizeOf(context).width / 3,
                     height: MediaQuery.sizeOf(context).height / 20.3,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          showModalBottomSheet(
+                              backgroundColor: ColorTheme.primaryWhite,
+                              context: context,
+                              builder: (context) {
+                                return Container(
+                                  height:
+                                      MediaQuery.sizeOf(context).height / 2.95,
+                                  width: double.maxFinite,
+                                  child: Padding(
+                                    padding: EdgeInsets.all(
+                                        MediaQuery.sizeOf(context).width /
+                                            18.75),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              bottom: MediaQuery.sizeOf(context)
+                                                      .height /
+                                                  20.92),
+                                          child: Text(
+                                            "Payment Methods",
+                                            style: TextStyle(
+                                                fontSize: 22,
+                                                fontWeight: FontWeight.bold,
+                                                color: ColorTheme.primaryBlack),
+                                          ),
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            InkWell(
+                                              onTap: () {
+                                                showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (BuildContext context) {
+                                                      return AlertDialog(
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        contentPadding:
+                                                            EdgeInsets.all(0),
+                                                        content: SizedBox(
+                                                            height: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .height /
+                                                                5.377,
+                                                            width: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .width /
+                                                                1.080,
+                                                            child: Stack(
+                                                              alignment:
+                                                                  Alignment
+                                                                      .topCenter,
+                                                              children: [
+                                                                Padding(
+                                                                  padding: EdgeInsets.only(
+                                                                      top: MediaQuery.sizeOf(context)
+                                                                              .height /
+                                                                          21.3684),
+                                                                  child:
+                                                                      Container(
+                                                                    height: MediaQuery.sizeOf(context)
+                                                                            .height /
+                                                                        3.61,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              20),
+                                                                      color: ColorTheme
+                                                                          .primaryWhite,
+                                                                    ),
+                                                                    child:
+                                                                        Column(
+                                                                      children: [
+                                                                        SizedBox(
+                                                                          height:
+                                                                              MediaQuery.sizeOf(context).height / 20.245,
+                                                                        ),
+                                                                        Padding(
+                                                                          padding:
+                                                                          EdgeInsets.symmetric(horizontal: MediaQuery.sizeOf(context).width / 6.46),
+                                                                          child:
+                                                                          Text(
+                                                                            "Payment is in process",
+                                                                            style:
+                                                                            TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+                                                                            textAlign:
+                                                                            TextAlign.center,
+                                                                          ),
+                                                                        ),
+                                                                        Padding(
+                                                                          padding:
+                                                                              EdgeInsets.symmetric(horizontal: MediaQuery.sizeOf(context).width / 6.46),
+                                                                          child:
+                                                                              Text(
+                                                                            "Please, wait a few moments",
+                                                                            style:
+                                                                                TextStyle(fontSize: 13),
+                                                                            textAlign:
+                                                                                TextAlign.center,
+                                                                          ),
+                                                                        ),
+                                                                        SizedBox(
+                                                                            height:
+                                                                                MediaQuery.sizeOf(context).height / 32.48),
+                                                                        Padding(
+                                                                          padding: EdgeInsets.symmetric(
+                                                                              vertical: 0,
+                                                                              horizontal: MediaQuery.sizeOf(context).width / 6.46),
+                                                                        )
+                                                                      ],
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                Container(
+                                                                  height: MediaQuery.sizeOf(context).height/10.15,
+
+                                                                    width: MediaQuery.sizeOf(context).height/10.15,
+                                                                    decoration: BoxDecoration(
+                                                                      color: ColorTheme.primaryWhite,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(
+                                                                                460),
+                                                                        boxShadow: [
+                                                                          BoxShadow(
+                                                                            blurRadius:
+                                                                                10,
+                                                                            spreadRadius:
+                                                                                -10,
+                                                                            color:
+                                                                                ColorTheme.primaryBlack,
+                                                                          )
+                                                                        ]),
+                                                                    child: Padding(
+                                                                      padding:  EdgeInsets.all(MediaQuery.sizeOf(context).width/25),
+                                                                      child: CircularProgressIndicator(
+                                                                        color: ColorTheme.primaryBlue,
+                                                                          strokeWidth: 6,
+                                                                      ),
+                                                                    )),
+                                                              ],
+                                                            )),
+                                                      );
+                                                    });
+                                              },
+                                              child: Container(
+                                                height:
+                                                    MediaQuery.sizeOf(context)
+                                                            .height /
+                                                        5.24,
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width /
+                                                        1.34,
+                                                decoration: BoxDecoration(
+                                                  color:
+                                                      ColorTheme.accentBluish,
+                                                  borderRadius:
+                                                      BorderRadius.circular(9),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(
+                                                      MediaQuery.sizeOf(context)
+                                                              .height /
+                                                          50.75),
+                                                  child: Column(
+                                                    children: [
+                                                      Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: [
+                                                          SvgPicture.asset(
+                                                              height: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .height /
+                                                                  23.89,
+                                                              width: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .width /
+                                                                  6.7,
+                                                              LocalIcon
+                                                                  .masterCard),
+                                                          IconButton(
+                                                              style: IconButton.styleFrom(
+                                                                  backgroundColor: ColorTheme
+                                                                      .primaryWhite
+                                                                      .withAlpha(
+                                                                          100),
+                                                                  foregroundColor:
+                                                                      ColorTheme
+                                                                          .primaryBlue),
+                                                              onPressed: () {},
+                                                              icon: Icon(
+                                                                Icons.settings,
+                                                              ))
+                                                        ],
+                                                      ),
+                                                      Padding(
+                                                        padding: EdgeInsets.only(
+                                                            top: MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height /
+                                                                24.60),
+                                                        child: Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            Text(
+                                                              "* * * *",
+                                                              style: TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600),
+                                                            ),
+                                                            Text(
+                                                              "* * * *",
+                                                              style: TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600),
+                                                            ),
+                                                            Text(
+                                                              "* * * *",
+                                                              style: TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600),
+                                                            ),
+                                                            Text(
+                                                              "1579",
+                                                              style: TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding: EdgeInsets.only(
+                                                            top: MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height /
+                                                                81.20),
+                                                        child: Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            Text("Card Holder"),
+                                                            Text(
+                                                                "${DateTime.now().month}/${DateTime.now().year}"),
+                                                          ],
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            InkWell(
+                                              onTap: () {},
+                                              child: Container(
+                                                height:
+                                                    MediaQuery.sizeOf(context)
+                                                            .height /
+                                                        5.24,
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width /
+                                                        8.33,
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            9),
+                                                    color:
+                                                        ColorTheme.primaryBlue),
+                                                child: Center(
+                                                  child: Icon(
+                                                    Icons.add,
+                                                    color:
+                                                        ColorTheme.primaryWhite,
+                                                  ),
+                                                ),
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              });
+                        },
                         child: Text(
                           "Pay",
                           style: TextStyle(
