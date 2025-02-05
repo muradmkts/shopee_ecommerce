@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:shopee_ecommerce/settings_screen/ui/screens/settings.dart';
+import 'package:get/get.dart';
 import '../../shared_theme/utilities/color_theme.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -122,7 +123,9 @@ class ProfileScreen extends StatelessWidget {
                               icon: Icon(Icons.message)),
                         ),
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.to(Settings());
+                            },
                             style: IconButton.styleFrom(
                                 backgroundColor: ColorTheme.accentBluish,
                                 foregroundColor: ColorTheme.primaryBlue),
@@ -418,9 +421,6 @@ class ProfileScreen extends StatelessWidget {
                               ]
 
                             ),
-
-
-
                           ),
                           SizedBox(
 
