@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopee_ecommerce/review/ui/screens/reviews.dart';
 import 'package:shopee_ecommerce/settings_screen/ui/screens/settings.dart';
 import 'package:get/get.dart';
 import '../../shared_theme/utilities/color_theme.dart';
@@ -344,7 +345,9 @@ class ProfileScreen extends StatelessWidget {
                           )),
                       SizedBox(width: 8),
                       ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(Reviews());
+                          },
                           style: ElevatedButton.styleFrom(
                               elevation: 0,
                               backgroundColor: ColorTheme.accentBluish,

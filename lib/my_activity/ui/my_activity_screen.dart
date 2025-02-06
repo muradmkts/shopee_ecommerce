@@ -1,7 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:gauge_chart/gauge_chart.dart';
-
+import 'package:get/get.dart';
+import 'package:shopee_ecommerce/my_activity/ui/my_history.dart';
 import '../../shared_theme/utilities/color_theme.dart';
 
 class MyActivity extends StatelessWidget {
@@ -428,7 +429,9 @@ class MyActivity extends StatelessWidget {
           ),
           Padding(
             padding:  EdgeInsets.symmetric(horizontal: MediaQuery.sizeOf(context).height/40.6, vertical: MediaQuery.sizeOf(context).height/63.46),
-            child: ElevatedButton(onPressed: (){}, child: Text("Order History", style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),)),
+            child: ElevatedButton(onPressed: (){
+              Get.to(MyHistory());
+            }, child: Text("Order History", style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),)),
           )
         ],
       ),

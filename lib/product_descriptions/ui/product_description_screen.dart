@@ -139,6 +139,7 @@ class _ProductDescriptionScreenState extends State<ProductDescriptionScreen> {
                             wishButton = true;
                           }
                           setState(() {});
+
                         }, icon: Icon(wishButton?Icons.favorite: Icons.favorite_border, color: wishButton? Colors.red:ColorTheme.primaryBlack,)),
 
                     ElevatedButton(
