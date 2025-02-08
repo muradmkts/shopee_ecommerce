@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-
 import '../../settings_screen/ui/screens/settings.dart';
 import '../../shared_theme/utilities/color_theme.dart';
-import '../../shared_widgets/arrow_button.dart';
+import '../../shared_theme/utilities/local_icon.dart';
 import '../controller/review_star_counter.dart';
 
 class MyHistory extends StatelessWidget {
@@ -346,7 +345,115 @@ class MyHistory extends StatelessWidget {
                                                                           context)
                                                                       .height /
                                                                   20.3)),
-                                                      onPressed: () {},
+                                                      onPressed: () {
+                                                        if (Get.find<ReviewStarCounter>().totalStar<=0){
+                                                          return;
+                                                        }
+                                                        showDialog(context: context,
+                                                            builder: (BuildContext context){
+
+                                                          return AlertDialog(
+                                                            backgroundColor: Colors.transparent,
+                                                            contentPadding: EdgeInsets.all(0),
+                                                            content: SizedBox(
+                                                                height: MediaQuery.sizeOf(context).height / 4.1855670,
+                                                                width:
+                                                                MediaQuery.sizeOf(context).width / 1.080,
+                                                                child: Stack(
+                                                                  alignment: Alignment.topCenter,
+                                                                  children: [
+                                                                    Padding(
+                                                                      padding: EdgeInsets.only(
+                                                                          top: MediaQuery.sizeOf(context)
+                                                                              .height /
+                                                                              21.3684),
+                                                                      child: Container(
+                                                                        height: MediaQuery.sizeOf(context)
+                                                                            .height /
+                                                                            3.61,
+                                                                        decoration: BoxDecoration(
+                                                                          borderRadius:
+                                                                          BorderRadius.circular(20),
+                                                                          color: ColorTheme.primaryWhite,
+                                                                        ),
+                                                                        child: Column(
+                                                                          mainAxisAlignment: MainAxisAlignment.center,
+                                                                          children: [
+                                                                            Text("Done", style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),),
+                                                                            SizedBox(
+                                                                              height:
+                                                                              MediaQuery.sizeOf(context)
+                                                                                  .height /
+                                                                                  162.4,
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsets.symmetric(
+                                                                                  horizontal:
+                                                                                  MediaQuery.sizeOf(
+                                                                                      context)
+                                                                                      .width /
+                                                                                      6.46),
+                                                                              child: Text(
+                                                                                "Thank you for your review",
+                                                                                style:
+                                                                                TextStyle(fontSize: 13),
+                                                                                textAlign: TextAlign.center,
+                                                                              ),
+                                                                            ),
+                                                                            Row(
+                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                              children: [
+                                                                               Get.find<ReviewStarCounter>().totalStar>0?Icon(Icons.star, color: ColorTheme.secondaryOrange,):Icon(Icons.star_border, color: ColorTheme.secondaryOrange),
+                                                                                Get.find<ReviewStarCounter>().totalStar>1?Icon(Icons.star, color: ColorTheme.secondaryOrange):Icon(Icons.star_border, color: ColorTheme.secondaryOrange),
+                                                                                Get.find<ReviewStarCounter>().totalStar>2?Icon(Icons.star, color: ColorTheme.secondaryOrange):Icon(Icons.star_border, color: ColorTheme.secondaryOrange),
+                                                                                Get.find<ReviewStarCounter>().totalStar>3?Icon(Icons.star, color: ColorTheme.secondaryOrange):Icon(Icons.star_border, color: ColorTheme.secondaryOrange),
+                                                                                Get.find<ReviewStarCounter>().totalStar>4?Icon(Icons.star, color: ColorTheme.secondaryOrange):Icon(Icons.star_border, color: ColorTheme.secondaryOrange),
+                                                                              ],
+                                                                              
+                                                                            )
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Stack(
+                                                                      alignment:Alignment.center,
+                                                                      children: [
+                                                                        Container(
+                                                                          height:MediaQuery.sizeOf(context).height/10.15,
+                                                                            width: MediaQuery.sizeOf(context).height/10.15,
+                                                                            decoration: BoxDecoration(
+                                                                              color: ColorTheme.primaryWhite,
+                                                                                shape: BoxShape.circle,
+                                                                                boxShadow: [
+                                                                                  BoxShadow(
+                                                                                    blurRadius: 10,
+                                                                                    spreadRadius: -7,
+                                                                                    color: ColorTheme.primaryBlack,
+                                                                                  )
+                                                                                ]),),
+                                                                        Container(
+                                                                            decoration: BoxDecoration(
+                                                                                borderRadius:
+                                                                                BorderRadius.circular(460),
+                                                                                boxShadow: [
+                                                                                  BoxShadow(
+                                                                                    blurRadius: 10,
+                                                                                    spreadRadius: -10,
+                                                                                    color: ColorTheme.primaryBlack
+                                                                                        .withOpacity(.2),
+                                                                                  )
+                                                                                ]),
+                                                                            child: SvgPicture.asset(
+                                                                                LocalIcon.checkMark)),
+                                                                      ],
+                                                                    ),
+                                                                  ],
+                                                                )),
+                                                          );
+
+                                                            });
+
+                                                      },
                                                       child: Text(
                                                         "Say it!",
                                                         style: TextStyle(
